@@ -89,6 +89,7 @@ n8n start
 n8n will be available at `http://localhost:5678`
 
 **Documentation:**
+
 - [n8n Installation Guide](https://docs.n8n.io/hosting/installation/npm/)
 - [n8n Quickstart](https://docs.n8n.io/try-it-out/)
 
@@ -124,6 +125,7 @@ docker run -d \
 n8n will be available at `http://localhost:5678`
 
 **Documentation:**
+
 - [n8n Docker Installation](https://docs.n8n.io/hosting/installation/docker/)
 - [n8n Docker Compose](https://docs.n8n.io/hosting/installation/docker-compose/)
 
@@ -257,6 +259,7 @@ Webhook → Google Sheets (Append Row) → Send Message (Gmail)
 ```
 
 Make sure to:
+
 - Set the webhook to accept POST requests
 - Configure Google Sheets credentials properly
 - Map all form fields correctly
@@ -267,17 +270,21 @@ Make sure to:
 ### n8n Connection Issues
 
 **Problem**: "N8N_WEBHOOK_URL is not defined"
+
 - **Solution**: Make sure you've created the `.env.local` file and added the webhook URL
 
 **Problem**: n8n webhook returns 404
+
 - **Solution**: Check that the workflow is activated in n8n
 
 ### Google Sheets Issues
 
 **Problem**: "Insufficient permissions" error
+
 - **Solution**: Make sure you've shared the Google Sheet with the service account email
 
 **Problem**: Data not appearing in sheets
+
 - **Solution**:
   - Check that the Google Sheets API is enabled
   - Verify the sheet name in the n8n node configuration
@@ -286,17 +293,20 @@ Make sure to:
 ### Application Issues
 
 **Problem**: Form submission fails
+
 - **Solution**:
   - Check browser console for errors
   - Verify the API route at `/api/contact` is working
   - Check that n8n is running and accessible
 
 **Problem**: "Invalid form data" error
+
 - **Solution**: Check that all required fields (name, email, message) are filled
 
 ### Port Already in Use
 
 **Problem**: Port 3000 or 5678 already in use
+
 - **Solution**:
   ```bash
   # For Next.js (use different port)

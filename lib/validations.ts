@@ -18,18 +18,16 @@ export const contactFormSchema = z.object({
     .optional()
     .or(z.literal("")),
 
-   phone:z
+  phone: z
     .string()
     .regex(/^[0-9+\-\s() ]*$/, "Please enter a valid phone number")
     .optional()
-    .or(z.literal('')),
+    .or(z.literal("")),
 
-   message: z
+  message: z
     .string()
     .min(5, "Message must be atleast 10 characters long")
     .max(1000, "Message is too long"),
-
 });
-
 
 export type ContactFormInput = z.infer<typeof contactFormSchema>;

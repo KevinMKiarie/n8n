@@ -1,4 +1,3 @@
-
 import ContactForm from "@/components/ContactForm";
 
 export default function Home() {
@@ -24,7 +23,7 @@ export default function Home() {
 
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-500">
-             Your information is secure and will never be shared
+            Your information is secure and will never be shared
           </p>
         </div>
       </div>

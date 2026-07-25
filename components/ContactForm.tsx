@@ -16,7 +16,7 @@ export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = React.useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -52,7 +52,7 @@ export default function ContactForm() {
         });
       } else {
         toast.error(
-          data.error || "Something went wrong, please try again later."
+          data.error || "Something went wrong, please try again later.",
         );
       }
     } catch (error) {

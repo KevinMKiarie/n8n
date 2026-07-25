@@ -6,9 +6,9 @@ export async function POST(request: NextRequest) {
   try {
     // Parse the request body
     const body = await request.json();
-    
+
     console.log("received data", body);
-    
+
     // Validate data using zod
 
     const validatedData = contactFormSchema.parse(body);
@@ -24,7 +24,7 @@ export async function POST(request: NextRequest) {
           message: "Internal Server Error",
           error: "Webhook URL not configured",
         },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
 
     if (!n8nResponse.ok) {
       throw new Error(
-        `n8n webhook responded with status ${n8nResponse.status}`
+        `n8n webhook responded with status ${n8nResponse.status}`,
       );
     }
 
@@ -65,7 +65,7 @@ export async function POST(request: NextRequest) {
           message: "Invalid form data",
           error: "Please check your input and try again",
         },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
         message: "Something went wrong",
         error: "Please try again later",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
